@@ -125,7 +125,7 @@ module rv32i_soc #(
         .wb_we_o    (wb_io_we_i),
         .wb_cyc_o   (wb_io_cyc_i),
         .wb_stb_o   (wb_io_stb_i),
-        .wb_dat_i   (wb_io_dat_o), // For simplicity, no data input
+        .wb_dat_i   (0), // wb_io_dat_o
         .wb_ack_i   (wb_io_ack_o)   // For simplicity, no acknowledgment signal
     );
 
@@ -219,6 +219,8 @@ module rv32i_soc #(
     wb_intercon interconnect_inst
    (.wb_clk_i(clk),
     .wb_rst_i(reset_n),
+    .wb_io_cti_i(0),  // use "wb_m2s_io_cti" --> but it's always 0
+    .wb_io_bte_i(0),  // ue "wb_m2s_io_bte" --> but it's always 0
     .*);
 
 
@@ -251,9 +253,9 @@ module rv32i_soc #(
     gpio_top gpio_inst(
 	// WISHBONE Interface
 	.wb_clk_i(clk), 
-    .wb_rst_i(reset_n),
+    .wb_rst_i(~reset_n), // active-high?
     .wb_cyc_i(wb_gpio_cyc_o), 
-    .wb_adr_i(wb_gpio_adr_o), 
+    .wb_adr_i(wb_gpio_adr_o[7:0]), 
     .wb_dat_i(wb_gpio_dat_o), 
     .wb_sel_i(wb_gpio_sel_o), 
     .wb_we_i(wb_gpio_we_o), 
@@ -269,95 +271,95 @@ module rv32i_soc #(
     .en_gpio(en_gpio)
     );
 
-    // ============================================
-    //                 SPI Instantiation
-    // ============================================
+    // // ============================================
+    // //                 SPI Instantiation
+    // // ============================================
     
-    // SPI FLASH External Connections 
-    logic sck_o;
-    logic [31:0] mosi_o, miso_i;
-    localparam SS_WIDTH = 1;
-    logic [SS_WIDTH-1:0] ss_o = 1'b0;
+    // // SPI FLASH External Connections 
+    // logic sck_o;
+    // logic [31:0] mosi_o, miso_i;
+    // localparam SS_WIDTH = 1;
+    // logic [SS_WIDTH-1:0] ss_o = 1'b0;
 
-    assign mosi_o = wb_io_dat_i;
-    assign miso_i = wb_io_dat_o;
+    // assign mosi_o = wb_io_dat_i;
+    // assign miso_i = wb_io_dat_o;
 
-    simple_spi #(
-    .SS_WIDTH(SS_WIDTH)
-    ) spi_inst (
-    // 8bit WISHBONE bus slave interface
-    .clk_i(clk),         // clock
-    .rst_i(reset_n),         // reset (synchronous active high) // DOCUMENTATION SAYS OTHERWISE (Asynchronous active low reset)
-    .cyc_i(wb_spi_flash_cyc_o),         // cycle
-    .stb_i(wb_spi_flash_stb_o),         // strobe
-    .adr_i(wb_spi_flash_adr_o[2:0]),         // [2:0] address
-    .we_i(wb_spi_flash_we_o),          // write enable
-    .dat_i(wb_spi_flash_dat_o[7:0]),         // [7:0] data input 
-    .dat_o(wb_spi_flash_dat_i[7:0]),         // [7:0] data output
-    .ack_o(wb_spi_flash_ack_i),         // normal bus termination
-    // .inta_o,        // interrupt output
+    // simple_spi #(
+    // .SS_WIDTH(SS_WIDTH)
+    // ) spi_inst (
+    // // 8bit WISHBONE bus slave interface
+    // .clk_i(clk),         // clock
+    // .rst_i(reset_n),         // reset (synchronous active high) // DOCUMENTATION SAYS OTHERWISE (Asynchronous active low reset)
+    // .cyc_i(wb_spi_flash_cyc_o),         // cycle
+    // .stb_i(wb_spi_flash_stb_o),         // strobe
+    // .adr_i(wb_spi_flash_adr_o[2:0]),         // [2:0] address
+    // .we_i(wb_spi_flash_we_o),          // write enable
+    // .dat_i(wb_spi_flash_dat_o[7:0]),         // [7:0] data input 
+    // .dat_o(wb_spi_flash_dat_i[7:0]),         // [7:0] data output
+    // .ack_o(wb_spi_flash_ack_i),         // normal bus termination
+    // // .inta_o,        // interrupt output
 
-    // SPI port
-    .sck_o(sck_o),         // serial clock output
-    .ss_o(ss_o),      // [SS_WIDTH-1:0] slave select (active low)
-    .mosi_o(mosi_o),        // MasterOut SlaveIN
-    .miso_i(miso_i)         // MasterIn SlaveOut
-    );
+    // // SPI port
+    // .sck_o(sck_o),         // serial clock output
+    // .ss_o(ss_o),      // [SS_WIDTH-1:0] slave select (active low)
+    // .mosi_o(mosi_o),        // MasterOut SlaveIN
+    // .miso_i(miso_i)         // MasterIn SlaveOut
+    // );
 
-    // ============================================
-    //                 UART Instantiation
-    // ============================================
+    // // ============================================
+    // //                 UART Instantiation
+    // // ============================================
 
-    // UART serial interface
-    logic uart_tx; // FPGA to PC
-    logic uart_rx; // PC to FPGA
+    // // UART serial interface
+    // logic uart_tx; // FPGA to PC
+    // logic uart_rx; // PC to FPGA
 
-    // Modem signals (Optional)
-    wire uart_rts = 1'b0; // Request To Send
-    wire uart_cts = 1'b0; // Clear To Send
-    wire uart_dtr = 1'b0; // Data Terminal Ready
-    wire uart_dsr = 1'b0; // Data Set Ready
-    wire uart_ri = 1'b0; // Ring Indicator
-    wire uart_dcd = 1'b0; // Data Carrier Detect
+    // // Modem signals (Optional)
+    // wire uart_rts = 1'b0; // Request To Send
+    // wire uart_cts = 1'b0; // Clear To Send
+    // wire uart_dtr = 1'b0; // Data Terminal Ready
+    // wire uart_dsr = 1'b0; // Data Set Ready
+    // wire uart_ri = 1'b0; // Ring Indicator
+    // wire uart_dcd = 1'b0; // Data Carrier Detect
 
-    uart_top uart_inst (
-        // ViDB0 is not defined
-    // `ifdef ViDBo
-    //     tf_push,
-    // `endif
+    // uart_top uart_inst (
+    //     // ViDB0 is not defined
+    // // `ifdef ViDBo
+    // //     tf_push,
+    // // `endif
 
-        .wb_clk_i(clk), 
+    //     .wb_clk_i(clk), 
         
-        // Wishbone signals
-        .wb_rst_i(~reset_n), // ACTIVE HIGH?
-        .wb_adr_i(wb_uart_adr_o), 
-        .wb_dat_i(wb_uart_dat_o), 
-        .wb_dat_o(wb_uart_dat_i), 
-        .wb_we_i(wb_uart_we_o), 
-        .wb_stb_i(wb_uart_stb_o), 
-        .wb_cyc_i(wb_uart_cyc_o), 
-        .wb_ack_o(wb_uart_ack_i), 
-        .wb_sel_i(wb_uart_sel_o),
-        // .int_o(), // interrupt request
+    //     // Wishbone signals
+    //     .wb_rst_i(~reset_n), // ACTIVE HIGH?
+    //     .wb_adr_i(wb_uart_adr_o), 
+    //     .wb_dat_i(wb_uart_dat_o), 
+    //     .wb_dat_o(wb_uart_dat_i), 
+    //     .wb_we_i(wb_uart_we_o), 
+    //     .wb_stb_i(wb_uart_stb_o), 
+    //     .wb_cyc_i(wb_uart_cyc_o), 
+    //     .wb_ack_o(wb_uart_ack_i), 
+    //     .wb_sel_i(wb_uart_sel_o),
+    //     // .int_o(), // interrupt request
 
-        // UART	signals
-        // serial input/output
-        .stx_pad_o(uart_tx), 
-        .srx_pad_i(uart_rx),
+    //     // UART	signals
+    //     // serial input/output
+    //     .stx_pad_o(uart_tx), 
+    //     .srx_pad_i(uart_rx),
 
-        // modem signals
-        .rts_pad_o(uart_rts), 
-        .cts_pad_i(uart_cts), 
-        .dtr_pad_o(uart_dtr), 
-        .dsr_pad_i(uart_dsr), 
-        .ri_pad_i(uart_ri), 
-        .dcd_pad_i(uart_dcd)
+    //     // modem signals
+    //     .rts_pad_o(uart_rts), 
+    //     .cts_pad_i(uart_cts), 
+    //     .dtr_pad_o(uart_dtr), 
+    //     .dsr_pad_i(uart_dsr), 
+    //     .ri_pad_i(uart_ri), 
+    //     .dcd_pad_i(uart_dcd)
 
-        // UART_HAS_BAUDRATE_OUTPUT is not defined
-    // `ifdef UART_HAS_BAUDRATE_OUTPUT
-    //     , baud_o
-    // `endif
-	);
+    //     // UART_HAS_BAUDRATE_OUTPUT is not defined
+    // // `ifdef UART_HAS_BAUDRATE_OUTPUT
+    // //     , baud_o
+    // // `endif
+	// );
     
     // ============================================
     //             Data Memory Instance
@@ -366,7 +368,7 @@ module rv32i_soc #(
     // Instantiate data memory here 
     data_mem #(
     .DEPTH(DMEM_DEPTH)
-    ) dmem_inst (
+    ) data_mem_inst (
     // 8bit WISHBONE bus slave interface
     .clk_i(clk),         // clock
     .rst_i(~reset_n),         // reset (synchronous active high)
