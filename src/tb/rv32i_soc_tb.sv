@@ -45,7 +45,7 @@ module rv32i_soc_tb;
            $display("dmem[%02d] => %8h <=> %8h <= imem[%02d] ", i, DUT.data_mem_inst.dmem[i], DUT.inst_mem_inst.dmem[i], i);
        end
         for(int i = 0; i<32; i = i+1) begin 
-            $display("reg_file[%02d] = %03d", i, DUT.rv32i_core_inst.data_path_inst.reg_file_inst.reg_file[i]);
+            $display("reg_file[%02d] = %03d", i, DUT.processor_core.data_path_inst.reg_file_inst.reg_file[i]);
         end
        $finish;
    end

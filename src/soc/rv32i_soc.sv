@@ -1,4 +1,4 @@
-// SECOND ATTEMPT
+// THIRD ATTEMPT
 module rv32i_soc #(
     parameter DMEM_DEPTH = 128,
     parameter IMEM_DEPTH = 128

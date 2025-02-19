@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb 19 10:03:25 2025
+# Process ID: 791988
+# Current directory: /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design
+# Command line: vivado
+# Log file: /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/vivado.log
+# Journal file: /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1 -part xc7a100tcsg324-1
+set_property board_part digilentinc.com:arty-a7-100:part0:1.1 [current_project]
+add_files {/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rv32i_top.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/spi/fifo4.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_top.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/alu_control.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/forwarding_unit.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/control_unit.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_transmitter.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_receiver.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/pipeline_controller.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_rfifo.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/sram/csrc/import_dpic.h /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/alignment_units.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/sram/sram_tb.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_sync_flops.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/gpio_top.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/bidirec.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/gpio_defines.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/WishboneInterconnect/wishbone_controller.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/sram/ts1da32kx32_100a_tc.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/hazard_controller.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/tb/rv32i_soc_tb.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/raminfr.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/reg_file.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/tb/rv32i_tb.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/imm_gen.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/main_control.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/lib.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/data_mem.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/sram/csrc/rmapats.h /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/branch_controller.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/sram/csrc/rmar0.h /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/spi/simple_spi_top.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_regs.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_wb.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/sram/csrc/rmar.h /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/WishboneInterconnect/wb_intercon.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/WishboneInterconnect/wb_intercon_1.2.2-r1/wb_mux.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_tfifo.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/alu.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/data_path.sv /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_defines.v /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/program_counter.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.srcs/constrs_1
+file mkdir /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.srcs/constrs_1/new
+close [ open /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.srcs/constrs_1/new/const.xdc w ]
+add_files -fileset constrs_1 /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.srcs/constrs_1/new/const.xdc
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top rv32i_soc_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+launch_simulation
+launch_simulation
+source rv32i_soc_tb.tcl
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.runs/impl_1/rv32i_soc_fpag_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.runs/impl_1/rv32i_soc_fpag_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

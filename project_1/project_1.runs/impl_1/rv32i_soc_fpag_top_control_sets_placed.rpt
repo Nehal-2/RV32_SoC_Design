@@ -1,0 +1,121 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Wed Feb 19 11:08:32 2025
+| Host         : IT-RDIA-NSH running 64-bit Ubuntu 24.04.1 LTS
+| Command      : report_control_sets -verbose -file rv32i_soc_fpag_top_control_sets_placed.rpt
+| Design       : rv32i_soc_fpag_top
+| Device       : xc7a100t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    43 |
+|    Minimum number of control sets                        |    43 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    34 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    43 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    38 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               4 |            3 |
+| No           | No                    | Yes                    |               4 |            2 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |            1678 |          682 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------+------------------------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
+|     Clock Signal     |                                 Enable Signal                                |                         Set/Reset Signal                        | Slice Load Count | Bel Load Count |
++----------------------+------------------------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
+|  CLK100MHZ_IBUF_BUFG |                                                                              | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                1 |              1 |
+|  clk_BUFG            |                                                                              | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                1 |              3 |
+|  clk_BUFG            |                                                                              |                                                                 |                3 |              4 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/n_bit_reg_reg[8]_1[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                3 |              8 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/n_bit_reg_reg[8]_1[1]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                2 |              8 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_4[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               20 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_24[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               17 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_25[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                7 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_26[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               13 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_27[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               13 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_28[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               25 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_29[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               22 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_3[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               18 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_30[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               13 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_31[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               12 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_22[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               16 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_14[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               14 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_15[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               24 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_5[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               26 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_6[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               15 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_7[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                7 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_8[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               15 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_9[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               12 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_13[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               13 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_23[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                7 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_19[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               18 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_20[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               14 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_10[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               13 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_12[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               10 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_1[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               11 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_2[0]      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               14 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_18[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               22 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_17[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               19 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_21[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               19 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/n_bit_reg_reg[0]_1[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               14 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_16[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               28 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/mem_wb_reg/n_bit_reg_reg[1]_11[0]     | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |                8 |             32 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/mem_wb_reg_en             | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               24 |             39 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/if_id_reg_en              | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               15 |             60 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/E[0]                      | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               13 |             63 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/n_bit_reg_reg[0]_0        | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               33 |            107 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/exe_mem_reg/n_bit_reg[179]_i_1__0_n_0 | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               44 |            180 |
+|  clk_BUFG            | soc_inst/processor_core/data_path_inst/if_id_reg/E[0]                        | soc_inst/processor_core/data_path_inst/reg_file_inst/CPU_RESETN |               49 |            189 |
++----------------------+------------------------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+
+
+
