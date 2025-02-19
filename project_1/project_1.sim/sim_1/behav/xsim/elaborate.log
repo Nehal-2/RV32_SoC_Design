@@ -3,8 +3,9 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: /home/it/Desktop/vivado/Vivado_2019_setup/Xilinx/Vivado/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto a0e32721c4a34e418e3de1174642e1c9 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rv32i_soc_tb_behav xil_defaultlib.rv32i_soc_tb xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'wb_io_cti_i' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:222]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 2 for port 'wb_io_bte_i' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:223]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 3 for port 'wb_io_cti_i' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:224]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 2 for port 'wb_io_bte_i' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:225]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'wb_adr_i' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:346]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
@@ -58,6 +59,15 @@ Compiling module xil_defaultlib.wb_mux(num_slaves=5,MATCH_ADDR=1...
 Compiling module xil_defaultlib.wb_intercon
 Compiling module xil_defaultlib.bidirec
 Compiling module xil_defaultlib.gpio_top
+Compiling module xil_defaultlib.uart_wb
+Compiling module xil_defaultlib.raminfr
+Compiling module xil_defaultlib.uart_tfifo
+Compiling module xil_defaultlib.uart_transmitter
+Compiling module xil_defaultlib.uart_sync_flops(width=1,init_val...
+Compiling module xil_defaultlib.uart_rfifo(fifo_width=11)
+Compiling module xil_defaultlib.uart_receiver
+Compiling module xil_defaultlib.uart_regs
+Compiling module xil_defaultlib.uart_top
 Compiling module xil_defaultlib.n_bit_reg(n=32)
 Compiling module xil_defaultlib.data_mem(DEPTH=128)
 Compiling module xil_defaultlib.rom

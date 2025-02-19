@@ -1,5 +1,14 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../../src/sram/csrc" \
+"../../../../../src/soc/uncore/uart/raminfr.v" \
+"../../../../../src/soc/uncore/uart/uart_receiver.v" \
+"../../../../../src/soc/uncore/uart/uart_regs.v" \
+"../../../../../src/soc/uncore/uart/uart_rfifo.v" \
+"../../../../../src/soc/uncore/uart/uart_sync_flops.v" \
+"../../../../../src/soc/uncore/uart/uart_tfifo.v" \
+"../../../../../src/soc/uncore/uart/uart_top.v" \
+"../../../../../src/soc/uncore/uart/uart_transmitter.v" \
+"../../../../../src/soc/uncore/uart/uart_wb.v" \
 "../../../../../src/soc/WishboneInterconnect/wb_intercon_1.2.2-r1/wb_mux.v" \
 
 sv xil_defaultlib  --include "../../../../../src/sram/csrc" \

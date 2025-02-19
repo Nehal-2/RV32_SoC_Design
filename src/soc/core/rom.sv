@@ -8,21 +8,21 @@ module rom (
     initial  $readmemh("/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/inst.mem",rom);
 //    initial  $readmemh("/home/it/Documents/rvsoc_v3/src/tb/uart_receiver/rom.hex",rom);
 
-///////Fibo with delay 
-    assign rom[0]    = 32'h20000537;
-    assign rom[1]    = 32'h10450513;
-    assign rom[2]    = 32'h00000593;
-    assign rom[3]    = 32'h00058693;
-    assign rom[4]    = 32'h00100613;
-    assign rom[5]    = 32'h00D52023;
-    assign rom[6]    = 32'h00B606B3;
-    assign rom[7]    = 32'h00060593;
-    assign rom[8]    = 32'h00068613;
-    assign rom[9]    = 32'h02FAF737;
-    assign rom[10]   = 32'h08070713;
-    assign rom[11]   = 32'hFFF70713;
-    assign rom[12]   = 32'hFE071EE3;
-    assign rom[13]   = 32'hFE1FF06F;
+/////////Fibo with delay 
+//    assign rom[0]    = 32'h20000537;
+//    assign rom[1]    = 32'h10450513;
+//    assign rom[2]    = 32'h00000593;
+//    assign rom[3]    = 32'h00058693;
+//    assign rom[4]    = 32'h00100613;
+//    assign rom[5]    = 32'h00D52023;
+//    assign rom[6]    = 32'h00B606B3;
+//    assign rom[7]    = 32'h00060593;
+//    assign rom[8]    = 32'h00068613;
+//    assign rom[9]    = 32'h02FAF737;
+//    assign rom[10]   = 32'h08070713;
+//    assign rom[11]   = 32'hFFF70713;
+//    assign rom[12]   = 32'hFE071EE3;
+//    assign rom[13]   = 32'hFE1FF06F;
     
     
     
