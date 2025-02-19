@@ -9,7 +9,9 @@ module rv32i_soc #(
     // spi signals to the spi-flash
 
     // uart signals
-
+    output o_uart_tx,
+    input i_uart_rx,
+    
     // gpio signals
     inout wire [31:0]   io_data
 );
@@ -125,7 +127,7 @@ module rv32i_soc #(
         .wb_we_o    (wb_io_we_i),
         .wb_cyc_o   (wb_io_cyc_i),
         .wb_stb_o   (wb_io_stb_i),
-        .wb_dat_i   (0), // wb_io_dat_o
+        .wb_dat_i   (wb_io_dat_o), // wb_io_dat_o changed it from 0
         .wb_ack_i   (wb_io_ack_o)   // For simplicity, no acknowledgment signal
     );
 
@@ -306,60 +308,72 @@ module rv32i_soc #(
     // .miso_i(miso_i)         // MasterIn SlaveOut
     // );
 
-    // // ============================================
-    // //                 UART Instantiation
-    // // ============================================
+     // ============================================
+     //                 UART Instantiation
+     // ============================================
 
-    // // UART serial interface
-    // logic uart_tx; // FPGA to PC
-    // logic uart_rx; // PC to FPGA
+     // UART serial interface
+//     logic uart_tx; // FPGA to PC
+//     logic uart_rx; // PC to FPGA
 
-    // // Modem signals (Optional)
-    // wire uart_rts = 1'b0; // Request To Send
-    // wire uart_cts = 1'b0; // Clear To Send
-    // wire uart_dtr = 1'b0; // Data Terminal Ready
-    // wire uart_dsr = 1'b0; // Data Set Ready
-    // wire uart_ri = 1'b0; // Ring Indicator
-    // wire uart_dcd = 1'b0; // Data Carrier Detect
+     // Modem signals (Optional)
+//     wire uart_rts = 1'b0; // Request To Send
+//     wire uart_cts = 1'b0; // Clear To Send
+//     wire uart_dtr = 1'b0; // Data Terminal Ready
+//     wire uart_dsr = 1'b0; // Data Set Ready
+//     wire uart_ri = 1'b0; // Ring Indicator
+//     wire uart_dcd = 1'b0; // Data Carrier Detect
 
-    // uart_top uart_inst (
-    //     // ViDB0 is not defined
-    // // `ifdef ViDBo
-    // //     tf_push,
-    // // `endif
 
-    //     .wb_clk_i(clk), 
+     logic uart_rts; // Request To Send
+     logic uart_cts; // Clear To Send
+     logic uart_dtr; // Data Terminal Ready
+     logic uart_dsr; // Data Set Ready
+     logic uart_ri; // Ring Indicator
+     logic uart_dcd; // Data Carrier Detect
+     logic int_o;
+     
+     uart_top uart_inst (
+         // ViDB0 is not defined
+     // `ifdef ViDBo
+     //     tf_push,
+     // `endif
+
+         .wb_clk_i(clk), 
         
-    //     // Wishbone signals
-    //     .wb_rst_i(~reset_n), // ACTIVE HIGH?
-    //     .wb_adr_i(wb_uart_adr_o), 
-    //     .wb_dat_i(wb_uart_dat_o), 
-    //     .wb_dat_o(wb_uart_dat_i), 
-    //     .wb_we_i(wb_uart_we_o), 
-    //     .wb_stb_i(wb_uart_stb_o), 
-    //     .wb_cyc_i(wb_uart_cyc_o), 
-    //     .wb_ack_o(wb_uart_ack_i), 
-    //     .wb_sel_i(wb_uart_sel_o),
-    //     // .int_o(), // interrupt request
+         // Wishbone signals
+         .wb_rst_i(~reset_n), // ACTIVE HIGH?
+         .wb_adr_i(wb_uart_adr_o[5:2]), 
+         .wb_dat_i(wb_uart_dat_o[7:0]), 
+         .wb_dat_o(wb_uart_dat_i[7:0]), 
+         .wb_we_i(wb_uart_we_o), 
+         .wb_stb_i(wb_uart_stb_o), 
+         .wb_cyc_i(wb_uart_cyc_o), 
+         .wb_ack_o(wb_uart_ack_i), 
+         .wb_sel_i(wb_uart_sel_o),
+          .int_o(int_o), // interrupt request
 
-    //     // UART	signals
-    //     // serial input/output
-    //     .stx_pad_o(uart_tx), 
-    //     .srx_pad_i(uart_rx),
+         // UART	signals
+         // serial input/output
+//         .stx_pad_o(uart_tx),//should we make this into one signal? 
+//         .srx_pad_i(uart_rx),//should we make this into one signal?
+           .stx_pad_o(o_uart_tx),
+           .srx_pad_i(i_uart_rx),
+            
+            
+         // modem signals
+         .rts_pad_o(uart_rts), 
+         .cts_pad_i(uart_cts), 
+         .dtr_pad_o(uart_dtr), 
+         .dsr_pad_i(uart_dsr), 
+         .ri_pad_i(uart_ri), 
+         .dcd_pad_i(uart_dcd)
 
-    //     // modem signals
-    //     .rts_pad_o(uart_rts), 
-    //     .cts_pad_i(uart_cts), 
-    //     .dtr_pad_o(uart_dtr), 
-    //     .dsr_pad_i(uart_dsr), 
-    //     .ri_pad_i(uart_ri), 
-    //     .dcd_pad_i(uart_dcd)
-
-    //     // UART_HAS_BAUDRATE_OUTPUT is not defined
-    // // `ifdef UART_HAS_BAUDRATE_OUTPUT
-    // //     , baud_o
-    // // `endif
-	// );
+         // UART_HAS_BAUDRATE_OUTPUT is not defined
+     // `ifdef UART_HAS_BAUDRATE_OUTPUT
+     //     , baud_o
+     // `endif
+	 );
     
     // ============================================
     //             Data Memory Instance

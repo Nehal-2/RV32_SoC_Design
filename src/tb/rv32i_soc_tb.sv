@@ -32,7 +32,7 @@ module rv32i_soc_tb;
 
    // initializing the instruction memory after every reset
    initial begin
-       $readmemh("/home/it/Documents/rvsoc_v3/src/tb/uart_receiver/machine.hex", DUT.inst_mem_inst.dmem);
+       $readmemh("/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/inst.mem", DUT.inst_mem_inst.dmem);
    end // wait 
 
    initial begin 
@@ -56,6 +56,14 @@ initial begin
 //   $dumpvars(0, DUT.inst_mem_inst);
 end
 
+    //assign DUT.uart_inst.srx_pad_i=DUT.uart_inst.stx_pad_o;
+    assign i_uart_rx= o_uart_tx;
+    initial begin
+        // Initialize signals
+        clk = 0;
+        reset_n = 0;
+        
+        end
 // initial begin
 //   // Enable VCD file dumping
 //   $dumpfile("waveform.vcd");
