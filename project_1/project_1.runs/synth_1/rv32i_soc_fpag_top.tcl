@@ -17,6 +17,11 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 5
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -55,6 +60,16 @@ read_verilog -library xil_defaultlib -sv {
   /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv
 }
 read_verilog -library xil_defaultlib {
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/raminfr.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_defines.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_receiver.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_regs.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_rfifo.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_sync_flops.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_tfifo.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_top.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_transmitter.v
+  /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_wb.v
   /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/WishboneInterconnect/wb_intercon_1.2.2-r1/wb_mux.v
   /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/gpio_defines.v
 }

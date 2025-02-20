@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Feb 19 11:07:41 2025
-# Process ID: 805164
+# Start of session at: Thu Feb 20 18:37:22 2025
+# Process ID: 1356497
 # Current directory: /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.runs/synth_1
 # Command line: vivado -log rv32i_soc_fpag_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rv32i_soc_fpag_top.tcl
 # Log file: /home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.runs/synth_1/rv32i_soc_fpag_top.vds
@@ -16,20 +16,20 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 805190 
+INFO: Helper process launched with PID 1356513 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1777.754 ; gain = 155.719 ; free physical = 7731 ; free virtual = 26883
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1769.211 ; gain = 155.688 ; free physical = 7283 ; free virtual = 26123
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'rv32i_soc_fpag_top' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:1]
 	Parameter DMEM_DEPTH bound to: 128 - type: integer 
 	Parameter IMEM_DEPTH bound to: 128 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:22]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'STARTUPE2' [/home/it/Desktop/vivado/Vivado_2019_setup/Xilinx/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77870]
 	Parameter PROG_USR bound to: FALSE - type: string 
 	Parameter SIM_CCLK_FREQ bound to: 0.000000 - type: float 
 INFO: [Synth 8-6155] done synthesizing module 'STARTUPE2' (1#1) [/home/it/Desktop/vivado/Vivado_2019_setup/Xilinx/Vivado/Vivado/2019.1/scripts/rt/data/unisim_comp.v:77870]
-INFO: [Synth 8-6157] synthesizing module 'clk_div_by_2' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:76]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div_by_2' (2#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:76]
+INFO: [Synth 8-6157] synthesizing module 'clk_div_by_2' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:82]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div_by_2' (2#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:82]
 INFO: [Synth 8-6157] synthesizing module 'rv32i_soc' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:2]
 	Parameter DMEM_DEPTH bound to: 128 - type: integer 
 	Parameter IMEM_DEPTH bound to: 128 - type: integer 
@@ -196,31 +196,66 @@ INFO: [Synth 8-6157] synthesizing module 'gpio_top' [/home/it/Chip_Design/final_
 WARNING: [Synth 8-3848] Net wb_err_o in module/entity gpio_top does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/gpio_top.sv:142]
 WARNING: [Synth 8-3848] Net wb_inta_o in module/entity gpio_top does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/gpio_top.sv:143]
 INFO: [Synth 8-6155] done synthesizing module 'gpio_top' (32#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/gpio/gpio_top.sv:115]
+INFO: [Synth 8-6157] synthesizing module 'uart_top' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_top.v:137]
+	Parameter SIM bound to: 0 - type: integer 
+	Parameter debug bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_wb' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_wb.v:139]
+INFO: [Synth 8-6155] done synthesizing module 'uart_wb' (33#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_wb.v:139]
+INFO: [Synth 8-6157] synthesizing module 'uart_regs' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_regs.v:227]
+	Parameter SIM bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_transmitter' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_transmitter.v:150]
+	Parameter SIM bound to: 0 - type: integer 
+	Parameter s_idle bound to: 3'b000 
+	Parameter s_send_start bound to: 3'b001 
+	Parameter s_send_byte bound to: 3'b010 
+	Parameter s_send_parity bound to: 3'b011 
+	Parameter s_send_stop bound to: 3'b100 
+	Parameter s_pop_byte bound to: 3'b101 
+INFO: [Synth 8-6157] synthesizing module 'uart_tfifo' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_tfifo.v:140]
+	Parameter fifo_width bound to: 8 - type: integer 
+	Parameter fifo_depth bound to: 16 - type: integer 
+	Parameter fifo_pointer_w bound to: 4 - type: integer 
+	Parameter fifo_counter_w bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'raminfr' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/raminfr.v:83]
+	Parameter addr_width bound to: 4 - type: integer 
+	Parameter data_width bound to: 8 - type: integer 
+	Parameter depth bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'raminfr' (34#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/raminfr.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tfifo' (35#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_tfifo.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'uart_transmitter' (36#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_transmitter.v:150]
+INFO: [Synth 8-6157] synthesizing module 'uart_sync_flops' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_sync_flops.v:67]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_value bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'uart_sync_flops' (37#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_sync_flops.v:67]
+INFO: [Synth 8-6157] synthesizing module 'uart_receiver' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_receiver.v:196]
+	Parameter sr_idle bound to: 4'b0000 
+	Parameter sr_rec_start bound to: 4'b0001 
+	Parameter sr_rec_bit bound to: 4'b0010 
+	Parameter sr_rec_parity bound to: 4'b0011 
+	Parameter sr_rec_stop bound to: 4'b0100 
+	Parameter sr_check_parity bound to: 4'b0101 
+	Parameter sr_rec_prepare bound to: 4'b0110 
+	Parameter sr_end_bit bound to: 4'b0111 
+	Parameter sr_ca_lc_parity bound to: 4'b1000 
+	Parameter sr_wait1 bound to: 4'b1001 
+	Parameter sr_push bound to: 4'b1010 
+INFO: [Synth 8-6157] synthesizing module 'uart_rfifo' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_rfifo.v:146]
+	Parameter fifo_width bound to: 11 - type: integer 
+	Parameter fifo_depth bound to: 16 - type: integer 
+	Parameter fifo_pointer_w bound to: 4 - type: integer 
+	Parameter fifo_counter_w bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rfifo' (38#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_rfifo.v:146]
+INFO: [Synth 8-6155] done synthesizing module 'uart_receiver' (39#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_receiver.v:196]
+INFO: [Synth 8-6155] done synthesizing module 'uart_regs' (40#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_regs.v:227]
+INFO: [Synth 8-6155] done synthesizing module 'uart_top' (41#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_top.v:137]
 INFO: [Synth 8-6157] synthesizing module 'data_mem' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/data_mem.sv:3]
 	Parameter DEPTH bound to: 128 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'n_bit_reg__parameterized1' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/lib.sv:131]
 	Parameter n bound to: 32 - type: integer 
 	Parameter RESET_VALUE bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'n_bit_reg__parameterized1' (32#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/lib.sv:131]
-INFO: [Synth 8-6155] done synthesizing module 'data_mem' (33#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/data_mem.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'n_bit_reg__parameterized1' (41#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/lib.sv:131]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (42#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/data_mem.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'rom' [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:1]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:8]
-WARNING: [Synth 8-3848] Net rom[14] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[15] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[16] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[17] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[18] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[19] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[20] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[21] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[22] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[23] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[24] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[25] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[26] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[27] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[28] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
-WARNING: [Synth 8-3848] Net rom[29] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
 WARNING: [Synth 8-3848] Net rom[30] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
 WARNING: [Synth 8-3848] Net rom[31] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
 WARNING: [Synth 8-3848] Net rom[32] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
@@ -303,11 +338,27 @@ WARNING: [Synth 8-3848] Net rom[108] in module/entity rom does not have driver. 
 WARNING: [Synth 8-3848] Net rom[109] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
 WARNING: [Synth 8-3848] Net rom[110] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
 WARNING: [Synth 8-3848] Net rom[111] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[112] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[113] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[114] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[115] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[116] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[117] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[118] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[119] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[120] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[121] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[122] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[123] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[124] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[125] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[126] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
+WARNING: [Synth 8-3848] Net rom[127] in module/entity rom does not have driver. [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:6]
 INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'rom' (34#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'rv32i_soc' (35#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:2]
-WARNING: [Synth 8-6104] Input port 'SW' has an internal driver [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:71]
-INFO: [Synth 8-6155] done synthesizing module 'rv32i_soc_fpag_top' (36#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (43#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/core/rom.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rv32i_soc' (44#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc.sv:2]
+WARNING: [Synth 8-7023] instance 'soc_inst' of module 'rv32i_soc' has 7 connections declared, but only 6 given [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:70]
+INFO: [Synth 8-6155] done synthesizing module 'rv32i_soc_fpag_top' (45#1) [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/rv32i_soc_fpga_top.sv:1]
 WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[31]
 WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[30]
 WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[29]
@@ -333,6 +384,49 @@ WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[10]
 WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[9]
 WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[1]
 WARNING: [Synth 8-3331] design data_mem has unconnected port adr_i[0]
+WARNING: [Synth 8-3331] design uart_receiver has unconnected port lcr[7]
+WARNING: [Synth 8-3331] design uart_receiver has unconnected port lcr[6]
+WARNING: [Synth 8-3331] design uart_transmitter has unconnected port lcr[7]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[31]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[30]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[29]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[28]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[27]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[26]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[25]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[24]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[23]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[22]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[21]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[20]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[19]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[18]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[17]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[16]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[15]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[14]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[13]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[12]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[11]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[10]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[9]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[8]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[7]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[6]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[5]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[4]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[3]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[2]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[1]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_dat32_o[0]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_sel_i[3]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_sel_i[2]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_sel_i[1]
+WARNING: [Synth 8-3331] design uart_wb has unconnected port wb_sel_i[0]
+WARNING: [Synth 8-3331] design uart_top has unconnected port wb_sel_i[3]
+WARNING: [Synth 8-3331] design uart_top has unconnected port wb_sel_i[2]
+WARNING: [Synth 8-3331] design uart_top has unconnected port wb_sel_i[1]
+WARNING: [Synth 8-3331] design uart_top has unconnected port wb_sel_i[0]
 WARNING: [Synth 8-3331] design gpio_top has unconnected port wb_err_o
 WARNING: [Synth 8-3331] design gpio_top has unconnected port wb_inta_o
 WARNING: [Synth 8-3331] design gpio_top has unconnected port wb_adr_i[7]
@@ -349,8 +443,25 @@ WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[3]
 WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[2]
 WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[1]
 WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[0]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[15]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[14]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[13]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[12]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[11]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[10]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[9]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[8]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[7]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[6]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[5]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[4]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[3]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[2]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[1]
+WARNING: [Synth 8-3331] design rv32i_soc_fpag_top has unconnected port LED[0]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1833.504 ; gain = 211.469 ; free physical = 7669 ; free virtual = 26822
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1825.930 ; gain = 212.406 ; free physical = 7209 ; free virtual = 26078
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -363,10 +474,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1839.441 ; gain = 217.406 ; free physical = 7668 ; free virtual = 26822
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1840.773 ; gain = 227.250 ; free physical = 7203 ; free virtual = 26084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1839.441 ; gain = 217.406 ; free physical = 7668 ; free virtual = 26822
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1840.773 ; gain = 227.250 ; free physical = 7203 ; free virtual = 26084
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -380,29 +491,76 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/rv32i_soc_fpag_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2024.035 ; gain = 0.000 ; free physical = 7646 ; free virtual = 26799
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.430 ; gain = 0.000 ; free physical = 7132 ; free virtual = 26027
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2024.035 ; gain = 0.000 ; free physical = 7646 ; free virtual = 26799
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.430 ; gain = 0.000 ; free physical = 7132 ; free virtual = 26027
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7691 ; free virtual = 26850
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7116 ; free virtual = 25961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7691 ; free virtual = 26850
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7116 ; free virtual = 25961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7691 ; free virtual = 26850
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7116 ; free virtual = 25961
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wbstate_reg' in module 'uart_wb'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_tfifo.v:207]
+INFO: [Synth 8-802] inferred FSM for state register 'tstate_reg' in module 'uart_transmitter'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_rfifo.v:250]
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'uart_receiver'
+INFO: [Synth 8-5544] ROM "toc_value" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rparity_xor" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/src/soc/uncore/uart/uart_regs.v:702]
+INFO: [Synth 8-5544] ROM "block_value" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "block_value" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "trigger_level" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               00
+                 iSTATE0 |                             0010 |                               01
+                 iSTATE1 |                             0100 |                               10
+                 iSTATE2 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wbstate_reg' using encoding 'one-hot' in module 'uart_wb'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                              000 |                              000
+              s_pop_byte |                              001 |                              101
+            s_send_start |                              010 |                              001
+             s_send_byte |                              011 |                              010
+           s_send_parity |                              100 |                              011
+             s_send_stop |                              101 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tstate_reg' using encoding 'sequential' in module 'uart_transmitter'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 sr_idle |                             0000 |                             0000
+            sr_rec_start |                             0001 |                             0001
+          sr_rec_prepare |                             0010 |                             0110
+              sr_rec_bit |                             0011 |                             0010
+              sr_end_bit |                             0100 |                             0111
+           sr_rec_parity |                             0101 |                             0011
+         sr_ca_lc_parity |                             0110 |                             1000
+         sr_check_parity |                             0111 |                             0101
+                sr_wait1 |                             1000 |                             1001
+             sr_rec_stop |                             1001 |                             0100
+                 sr_push |                             1010 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'sequential' in module 'uart_receiver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7684 ; free virtual = 26844
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7115 ; free virtual = 25962
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -417,8 +575,20 @@ Detailed RTL Component Info :
 +---Adders : 
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input     32 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 5     
+	   2 Input      3 Bit       Adders := 2     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 2     
+	   2 Input      4 Bit         XORs := 1     
++---XORs : 
+	                9 Bit    Wide XORs := 1     
+	                8 Bit    Wide XORs := 1     
+	                7 Bit    Wide XORs := 1     
+	                6 Bit    Wide XORs := 1     
+	                5 Bit    Wide XORs := 1     
 +---Registers : 
 	              190 Bit    Registers := 1     
 	              180 Bit    Registers := 1     
@@ -426,9 +596,15 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 1     
 	               39 Bit    Registers := 1     
 	               32 Bit    Registers := 39    
-	                5 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 10    
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 20    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 59    
 +---RAMs : 
 	               4K Bit         RAMs := 2     
 +---Muxes : 
@@ -443,14 +619,36 @@ Detailed RTL Component Info :
 	   4 Input     32 Bit        Muxes := 1     
 	   2 Input     24 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
-	   4 Input      8 Bit        Muxes := 1     
-	  11 Input      4 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 3     
+	  11 Input     11 Bit        Muxes := 1     
+	   8 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 9     
+	   4 Input      8 Bit        Muxes := 3     
+	  11 Input      8 Bit        Muxes := 2     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 4     
+	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 4     
 	   7 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 12    
+	   4 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 39    
+	   6 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 1     
+	  11 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 119   
 	   7 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 28    
+	   6 Input      1 Bit        Muxes := 10    
+	  11 Input      1 Bit        Muxes := 11    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -592,6 +790,128 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 5     
+Module uart_wb 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   4 Input      1 Bit        Muxes := 3     
+Module uart_tfifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 3     
+Module uart_transmitter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
+	                7 Bit    Wide XORs := 1     
+	                6 Bit    Wide XORs := 1     
+	                5 Bit    Wide XORs := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 10    
+Module uart_sync_flops 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module uart_rfifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 16    
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 52    
+	   4 Input      1 Bit        Muxes := 19    
+Module uart_receiver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	                9 Bit    Wide XORs := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+	  11 Input     11 Bit        Muxes := 1     
+	   8 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 2     
+	  11 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 6     
+	  11 Input      4 Bit        Muxes := 3     
+	  11 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 11    
+Module uart_regs 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      4 Bit         XORs := 1     
++---Registers : 
+	                8 Bit    Registers := 6     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 35    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
 Module n_bit_reg__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -625,45 +945,48 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-6014] Unused sequential element soc_inst/data_mem_inst/dmem_reg was removed. 
-WARNING: [Synth 8-3331] design rom has unconnected port addr[11]
-WARNING: [Synth 8-3331] design rom has unconnected port addr[10]
-WARNING: [Synth 8-3331] design rom has unconnected port addr[9]
-WARNING: [Synth 8-3331] design rom has unconnected port addr[1]
-WARNING: [Synth 8-3331] design rom has unconnected port addr[0]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[6]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[5]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[4]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[3]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[2]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[1]
-WARNING: [Synth 8-3331] design imm_gen has unconnected port inst[0]
+INFO: [Synth 8-5544] ROM "regs/receiver/toc_value" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs/receiver/" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-3886] merging instance 'soc_inst/processor_core/data_path_inst/if1_if2_reg/n_bit_reg_reg[0]' (FDCE) to 'soc_inst/processor_core/data_path_inst/if1_if2_reg/n_bit_reg_reg[32]'
+INFO: [Synth 8-3886] merging instance 'soc_inst/uart_inst/regs/delayed_modem_signals_reg[1]' (FDC) to 'soc_inst/uart_inst/regs/delayed_modem_signals_reg[2]'
+INFO: [Synth 8-3886] merging instance 'soc_inst/uart_inst/regs/delayed_modem_signals_reg[2]' (FDC) to 'soc_inst/uart_inst/regs/delayed_modem_signals_reg[3]'
 INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[0]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[14]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[19]'
+INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[3]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[19]'
+INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[16]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[18]'
+INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[30]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[31]'
 INFO: [Synth 8-3886] merging instance 'soc_inst/processor_core/data_path_inst/if_id_reg/n_bit_reg_reg[32]' (FDCE) to 'soc_inst/processor_core/data_path_inst/if_id_reg/n_bit_reg_reg[64]'
 INFO: [Synth 8-3886] merging instance 'soc_inst/processor_core/data_path_inst/id_exe_reg/n_bit_reg_reg[126]' (FDCE) to 'soc_inst/processor_core/data_path_inst/id_exe_reg/n_bit_reg_reg[158]'
-INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[26]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[30]'
-INFO: [Synth 8-3886] merging instance 'soc_inst/rom_inst_reg/n_bit_reg_reg[31]' (FDCE) to 'soc_inst/rom_inst_reg/n_bit_reg_reg[30]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7658 ; free virtual = 26806
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7155 ; free virtual = 26004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Preliminary Mapping  Report (see note below)
-+-------------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name        | RTL Object                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+-------------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|rv32i_soc_fpag_top | soc_inst/inst_mem_inst/dmem_reg | 128 x 32(READ_FIRST)   | W |   | 128 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-+-------------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|data_mem:   | dmem_reg   | 128 x 32(READ_FIRST)   | W |   | 128 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|data_mem:   | dmem_reg   | 128 x 32(READ_FIRST)   | W |   | 128 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-------------------+----------------------------------------+-----------+----------------------+--------------+
+|Module Name        | RTL Object                             | Inference | Size (Depth x Width) | Primitives   | 
++-------------------+----------------------------------------+-----------+----------------------+--------------+
+|soc_inst/uart_inst | regs/receiver/fifo_rx/rfifo/ram_reg    | Implied   | 16 x 8               | RAM32M x 2   | 
+|soc_inst/uart_inst | regs/transmitter/fifo_tx/tfifo/ram_reg | Implied   | 16 x 8               | RAM32M x 2   | 
++-------------------+----------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance i_39/soc_inst/inst_mem_inst/dmem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance soc_inst/data_mem_inst/i_0/dmem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance soc_inst/inst_mem_inst/i_0/dmem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -674,24 +997,34 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7569 ; free virtual = 26699
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7041 ; free virtual = 25939
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7555 ; free virtual = 26686
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7087 ; free virtual = 25937
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping  Report
-+-------------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name        | RTL Object                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+-------------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|rv32i_soc_fpag_top | soc_inst/inst_mem_inst/dmem_reg | 128 x 32(READ_FIRST)   | W |   | 128 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-+-------------------+---------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|data_mem:   | dmem_reg   | 128 x 32(READ_FIRST)   | W |   | 128 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|data_mem:   | dmem_reg   | 128 x 32(READ_FIRST)   | W |   | 128 x 32(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping  Report
++-------------------+----------------------------------------+-----------+----------------------+--------------+
+|Module Name        | RTL Object                             | Inference | Size (Depth x Width) | Primitives   | 
++-------------------+----------------------------------------+-----------+----------------------+--------------+
+|soc_inst/uart_inst | regs/receiver/fifo_rx/rfifo/ram_reg    | Implied   | 16 x 8               | RAM32M x 2   | 
+|soc_inst/uart_inst | regs/transmitter/fifo_tx/tfifo/ram_reg | Implied   | 16 x 8               | RAM32M x 2   | 
++-------------------+----------------------------------------+-----------+----------------------+--------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -705,41 +1038,44 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][25] )
+INFO: [Synth 8-3886] merging instance 'soc_inst/wishbone_master/wishbone_cont_reg/n_bit_reg_reg[3]' (FDC) to 'soc_inst/uart_inst/wb_interface/wb_adr_is_reg[0]'
+INFO: [Synth 8-3886] merging instance 'soc_inst/wishbone_master/wishbone_cont_reg/n_bit_reg_reg[4]' (FDC) to 'soc_inst/uart_inst/wb_interface/wb_adr_is_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][10] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][30] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][11] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][24] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\soc_inst/processor_core/data_path_inst/reg_file_inst/reg_file_reg[0][1] )
+INFO: [Synth 8-6837] The timing for the instance soc_inst/data_mem_inst/dmem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance soc_inst/inst_mem_inst/dmem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7561 ; free virtual = 26687
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7059 ; free virtual = 25911
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -763,7 +1099,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7574 ; free virtual = 26690
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7056 ; free virtual = 25912
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -776,7 +1112,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7574 ; free virtual = 26690
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7056 ; free virtual = 25912
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -788,25 +1124,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7578 ; free virtual = 26694
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7055 ; free virtual = 25911
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7578 ; free virtual = 26694
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7055 ; free virtual = 25911
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7578 ; free virtual = 26694
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7055 ; free virtual = 25911
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7578 ; free virtual = 26694
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7055 ; free virtual = 25911
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -823,83 +1159,99 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     2|
-|2     |CARRY4    |    28|
-|3     |LUT1      |     3|
-|4     |LUT2      |   463|
-|5     |LUT3      |   224|
-|6     |LUT4      |   134|
-|7     |LUT5      |   356|
-|8     |LUT6      |  1031|
-|9     |MUXF7     |   308|
+|2     |CARRY4    |    32|
+|3     |LUT1      |     5|
+|4     |LUT2      |   447|
+|5     |LUT3      |   248|
+|6     |LUT4      |   277|
+|7     |LUT5      |   504|
+|8     |LUT6      |  1228|
+|9     |MUXF7     |   300|
 |10    |MUXF8     |   131|
-|11    |RAMB18E1  |     1|
-|12    |STARTUPE2 |     1|
-|13    |FDCE      |  1662|
-|14    |FDPE      |    20|
-|15    |FDRE      |     4|
-|16    |IBUF      |     2|
-|17    |OBUF      |    16|
+|11    |RAM32M    |     4|
+|12    |RAMB18E1  |     2|
+|13    |STARTUPE2 |     1|
+|14    |FDCE      |  1979|
+|15    |FDPE      |    49|
+|16    |FDRE      |     4|
+|17    |IBUF      |     4|
+|18    |OBUF      |     2|
+|19    |OBUFT     |    16|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+---------------------------------+-------------------------------+------+
 |      |Instance                         |Module                         |Cells |
 +------+---------------------------------+-------------------------------+------+
-|1     |top                              |                               |  4386|
+|1     |top                              |                               |  5235|
 |2     |  gen_core_clk                   |clk_div_by_2                   |     2|
-|3     |  soc_inst                       |rv32i_soc                      |  4362|
-|4     |    gpio_inst                    |gpio_top                       |    16|
-|5     |    inst_mem_inst                |data_mem                       |    33|
-|6     |    interconnect_inst            |wb_intercon                    |     3|
-|7     |      wb_mux_io                  |wb_mux                         |     3|
-|8     |    processor_core               |rv32i                          |  4220|
-|9     |      controller_inst            |control_unit                   |     4|
-|10    |        alu_controller_inst      |alu_control                    |     4|
-|11    |      data_path_inst             |data_path                      |  4189|
-|12    |        if_id_reg_clr_ff_inst    |n_bit_reg                      |     1|
-|13    |        if_id_reg_en_ff_inst     |n_bit_reg_2                    |     1|
-|14    |        alu_inst                 |alu                            |    14|
-|15    |          add_sub_unit           |n_bit_add_sub                  |     8|
-|16    |        PC_inst                  |program_counter                |    81|
-|17    |        alu_op1_mux              |mux2x1_0                       |    91|
-|18    |        alu_op2_mux              |mux2x1_1                       |    21|
-|19    |        exe_mem_reg              |n_bit_reg_wclr__parameterized3 |   263|
-|20    |        id_exe_reg               |n_bit_reg_wclr__parameterized2 |  1023|
-|21    |        if1_if2_reg              |n_bit_reg_wclr                 |   126|
-|22    |        if2_reg                  |n_bit_reg_wclr__parameterized0 |    76|
-|23    |        if_id_reg                |n_bit_reg_wclr__parameterized1 |   248|
-|24    |        jalr_pc_mux              |mux2x1_3                       |    31|
-|25    |        mem_stage_result_sel_mux |one_hot_mux3x1__parameterized0 |    32|
-|26    |        mem_wb_reg               |n_bit_reg_wclr__parameterized4 |   178|
-|27    |        next_pc_mux              |mux2x1_4                       |    32|
-|28    |        reg_file_inst            |reg_file                       |  1889|
-|29    |        write_back_mux           |mux2x1_5                       |    64|
-|30    |    rom_imem_inst_sel_mux        |mux2x1                         |    32|
-|31    |    rom_inst_reg                 |n_bit_reg__parameterized1      |    28|
-|32    |    rom_instance                 |rom                            |    29|
+|3     |  soc_inst                       |rv32i_soc                      |  5206|
+|4     |    data_mem_inst                |data_mem                       |    33|
+|5     |    gpio_inst                    |gpio_top                       |   104|
+|6     |    inst_mem_inst                |data_mem_0                     |    33|
+|7     |    interconnect_inst            |wb_intercon                    |    48|
+|8     |      wb_mux_io                  |wb_mux                         |    48|
+|9     |    processor_core               |rv32i                          |  4140|
+|10    |      controller_inst            |control_unit                   |     4|
+|11    |        alu_controller_inst      |alu_control                    |     4|
+|12    |      data_path_inst             |data_path                      |  4136|
+|13    |        if_id_reg_clr_ff_inst    |n_bit_reg                      |     1|
+|14    |        if_id_reg_en_ff_inst     |n_bit_reg_4                    |     1|
+|15    |        alu_inst                 |alu                            |    14|
+|16    |          add_sub_unit           |n_bit_add_sub                  |     8|
+|17    |        PC_inst                  |program_counter                |    76|
+|18    |        alu_op1_mux              |mux2x1_2                       |    32|
+|19    |        alu_op2_mux              |mux2x1_3                       |    26|
+|20    |        exe_mem_reg              |n_bit_reg_wclr__parameterized3 |   494|
+|21    |        id_exe_reg               |n_bit_reg_wclr__parameterized2 |   804|
+|22    |        if1_if2_reg              |n_bit_reg_wclr                 |   126|
+|23    |        if2_reg                  |n_bit_reg_wclr__parameterized0 |    76|
+|24    |        if_id_reg                |n_bit_reg_wclr__parameterized1 |   244|
+|25    |        jalr_pc_mux              |mux2x1_5                       |    31|
+|26    |        mem_stage_result_sel_mux |one_hot_mux3x1__parameterized0 |    32|
+|27    |        mem_wb_reg               |n_bit_reg_wclr__parameterized4 |   113|
+|28    |        next_pc_mux              |mux2x1_6                       |    32|
+|29    |        reg_file_inst            |reg_file                       |  1953|
+|30    |        write_back_mux           |mux2x1_7                       |    32|
+|31    |    rom_imem_inst_sel_mux        |mux2x1                         |    32|
+|32    |    rom_inst_reg                 |n_bit_reg__parameterized1      |    28|
+|33    |    rom_instance                 |rom                            |    29|
+|34    |    uart_inst                    |uart_top                       |   725|
+|35    |      regs                       |uart_regs                      |   672|
+|36    |        i_uart_sync_flops        |uart_sync_flops                |     3|
+|37    |        receiver                 |uart_receiver                  |   390|
+|38    |          fifo_rx                |uart_rfifo                     |   252|
+|39    |            rfifo                |raminfr_1                      |    23|
+|40    |        transmitter              |uart_transmitter               |    96|
+|41    |          fifo_tx                |uart_tfifo                     |    49|
+|42    |            tfifo                |raminfr                        |    12|
+|43    |      wb_interface               |uart_wb                        |    53|
+|44    |    wishbone_master              |wishbone_controller            |    33|
+|45    |      wishbone_cont_reg          |n_bit_reg__parameterized0      |    33|
 +------+---------------------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7578 ; free virtual = 26694
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7055 ; free virtual = 25911
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2024.035 ; gain = 217.406 ; free physical = 7578 ; free virtual = 26693
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2024.035 ; gain = 402.000 ; free physical = 7578 ; free virtual = 26693
+Synthesis finished with 0 errors, 0 critical warnings and 82 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2022.430 ; gain = 227.250 ; free physical = 7055 ; free virtual = 25911
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2022.430 ; gain = 408.906 ; free physical = 7055 ; free virtual = 25911
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 469 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 470 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.973 ; gain = 0.000 ; free physical = 7585 ; free virtual = 26701
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2037.383 ; gain = 0.000 ; free physical = 7045 ; free virtual = 25910
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-162 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
+203 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2029.973 ; gain = 646.852 ; free physical = 7586 ; free virtual = 26701
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2029.973 ; gain = 0.000 ; free physical = 7586 ; free virtual = 26701
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2037.383 ; gain = 662.773 ; free physical = 7077 ; free virtual = 25941
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2037.383 ; gain = 0.000 ; free physical = 7077 ; free virtual = 25941
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/it/Chip_Design/final_microprocessor_soc/RV32_SoC_Design/project_1/project_1.runs/synth_1/rv32i_soc_fpag_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file rv32i_soc_fpag_top_utilization_synth.rpt -pb rv32i_soc_fpag_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 19 11:08:02 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 20 18:37:46 2025...

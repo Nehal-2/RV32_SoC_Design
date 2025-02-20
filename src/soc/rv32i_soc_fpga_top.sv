@@ -3,15 +3,18 @@ module rv32i_soc_fpag_top (
     input logic CPU_RESETN, 
     
     // FPGA core signals 
-//    output logic        o_uart_tx,
-//    input  logic        i_uart_rx,
+    //UART
+    input logic        i_uart_tx,
+    output  logic        o_uart_rx,
+    output uart_rts, // Request To Send
+    input uart_cts, // Clear To Send
 //    output logic        o_flash_cs_n,
 //    output logic        o_flash_mosi,
 //    input  logic        i_flash_miso,
 
 
-    input logic [15:0] SW,
-    output logic [15:0] LED
+ input logic [15:0] SW,
+ output logic [15:0] LED
 );  
 
     parameter DMEM_DEPTH = 128;
@@ -67,7 +70,12 @@ module rv32i_soc_fpag_top (
         .DMEM_DEPTH(DMEM_DEPTH),
         .IMEM_DEPTH(IMEM_DEPTH)
     ) soc_inst (
-        .*,
+      .clk(clk),    
+        .reset_n(reset_n),
+        .o_uart_tx(o_uart_rx),
+        .i_uart_rx(i_uart_tx),
+        .uart_cts(uart_cts),
+        .uart_rts(uart_rts),
         .io_data({SW, LED})
     );
 

@@ -11,6 +11,8 @@ module rv32i_soc #(
     // uart signals
     output o_uart_tx,
     input i_uart_rx,
+    output uart_rts, // Request To Send
+    input uart_cts, // Clear To Send
     
     // gpio signals
     inout wire [31:0]   io_data
@@ -325,8 +327,6 @@ module rv32i_soc #(
 //     wire uart_dcd = 1'b0; // Data Carrier Detect
 
 
-     logic uart_rts; // Request To Send
-     logic uart_cts; // Clear To Send
      logic uart_dtr; // Data Terminal Ready
      logic uart_dsr; // Data Set Ready
      logic uart_ri; // Ring Indicator
@@ -343,7 +343,7 @@ module rv32i_soc #(
         
          // Wishbone signals
          .wb_rst_i(~reset_n), // ACTIVE HIGH?
-         .wb_adr_i(wb_uart_adr_o[5:2]), 
+         .wb_adr_i(wb_uart_adr_o[2:0]), 
          .wb_dat_i(wb_uart_dat_o[7:0]), 
          .wb_dat_o(wb_uart_dat_i[7:0]), 
          .wb_we_i(wb_uart_we_o), 
@@ -351,7 +351,7 @@ module rv32i_soc #(
          .wb_cyc_i(wb_uart_cyc_o), 
          .wb_ack_o(wb_uart_ack_i), 
          .wb_sel_i(wb_uart_sel_o),
-          .int_o(int_o), // interrupt request
+         .int_o(int_o), // interrupt request
 
          // UART	signals
          // serial input/output
