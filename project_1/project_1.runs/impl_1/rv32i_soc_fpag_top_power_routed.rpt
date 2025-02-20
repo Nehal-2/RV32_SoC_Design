@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Wed Feb 19 11:08:50 2025
+| Date             : Thu Feb 20 18:38:42 2025
 | Host             : IT-RDIA-NSH running 64-bit Ubuntu 24.04.1 LTS
 | Command          : report_power -file rv32i_soc_fpag_top_power_routed.rpt -pb rv32i_soc_fpag_top_power_summary_routed.pb -rpx rv32i_soc_fpag_top_power_routed.rpx
 | Design           : rv32i_soc_fpag_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.089        |
+| Total On-Chip Power (W)  | 0.091        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.005        |
+| Dynamic (W)              | 0.007        |
 | Device Static (W)        | 0.084        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.6         |
@@ -49,23 +49,24 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     4381 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1818 |     63400 |            2.87 |
-|   Register     |    <0.001 |     1686 |    126800 |            1.33 |
-|   CARRY4       |    <0.001 |       28 |     15850 |            0.18 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |      439 |     63400 |            0.69 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.002 |     2885 |       --- |             --- |
-| Block RAM      |    <0.001 |      0.5 |       135 |            0.37 |
-| I/O            |    <0.001 |       18 |       210 |            8.57 |
-| Static Power   |     0.084 |          |           |                 |
-| Total          |     0.089 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |    <0.001 |        3 |       --- |             --- |
+| Slice Logic              |     0.002 |     5249 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     2238 |     63400 |            3.53 |
+|   Register               |    <0.001 |     2033 |    126800 |            1.60 |
+|   CARRY4                 |    <0.001 |       32 |     15850 |            0.20 |
+|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
+|   F7/F8 Muxes            |    <0.001 |      431 |     63400 |            0.68 |
+|   LUT as Distributed RAM |    <0.001 |       16 |     19000 |            0.08 |
+|   Others                 |     0.000 |       28 |       --- |             --- |
+| Signals                  |     0.003 |     3544 |       --- |             --- |
+| Block RAM                |     0.001 |        1 |       135 |            0.74 |
+| I/O                      |    <0.001 |       22 |       210 |           10.48 |
+| Static Power             |     0.084 |          |           |                 |
+| Total                    |     0.091 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -74,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.005 |      0.015 |
+| Vccint    |       1.000 |     0.022 |       0.007 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,8 +144,8 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| rv32i_soc_fpag_top   |     0.005 |
-|   soc_inst           |     0.004 |
+| rv32i_soc_fpag_top   |     0.007 |
+|   soc_inst           |     0.005 |
 |     processor_core   |     0.003 |
 |       data_path_inst |     0.003 |
 +----------------------+-----------+

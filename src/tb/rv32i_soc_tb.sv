@@ -5,9 +5,12 @@ module rv32i_soc_tb;
     logic o_flash_cs_n;
     logic o_flash_mosi;
     logic i_flash_miso;
-    logic o_uart_tx;
-    logic i_uart_rx;
 
+    // uart signals
+   logic  o_uart_tx;
+   logic i_uart_rx;
+   logic  uart_rts; // Request To Send
+   logic uart_cts; // Clear To Send
     wire [31:0] io_data;
 
 
