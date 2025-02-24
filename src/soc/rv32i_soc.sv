@@ -221,11 +221,12 @@ module rv32i_soc #(
     logic        wb_inta_o; // ADDED
 
     wb_intercon interconnect_inst
-   (.wb_clk_i(clk),
+   (.*,
+   .wb_clk_i(clk),
     .wb_rst_i(reset_n),
     .wb_io_cti_i(0),  // use "wb_m2s_io_cti" --> but it's always 0
-    .wb_io_bte_i(0),  // ue "wb_m2s_io_bte" --> but it's always 0
-    .*);
+    .wb_io_bte_i(0)  // ue "wb_m2s_io_bte" --> but it's always 0
+    );
 
 
     // ============================================
@@ -407,8 +408,8 @@ module rv32i_soc #(
     logic sel_boot_rom, sel_boot_rom_ff;
     
 
-    assign imem_addr = sel_boot_rom ? wb_imem_adr_o: current_pc;
-
+    //assign imem_addr = sel_boot_rom ? wb_imem_adr_o: current_pc;
+assign imem_addr = sel_boot_rom ? wb_dmem_adr_o: current_pc;
     data_mem #(
         .DEPTH(IMEM_DEPTH)
     ) inst_mem_inst (
@@ -423,6 +424,7 @@ module rv32i_soc #(
         .dat_o       (wb_imem_dat_i),
         .ack_o       (wb_imem_ack_i)
     );
+    
 //    data_mem #(
 //        .DEPTH(IMEM_DEPTH)
 //    ) inst_mem_inst (
@@ -437,8 +439,9 @@ module rv32i_soc #(
 //        .dat_o       (wb_s2m_imem_dat),
 //        .ack_o       (wb_s2m_imem_ack)
 //    );
-    assign imem_inst = wb_imem_dat_i;
-
+ assign imem_inst = wb_imem_dat_i; ///There could be an issue here
+  //    assign imem_inst = wb_imem_adr_o;  
+  //  assign imem_inst=wb_imem_adr_o;
     // BOOT ROM 
     logic [31:0] rom_inst, rom_inst_ff;
     rom rom_instance(
