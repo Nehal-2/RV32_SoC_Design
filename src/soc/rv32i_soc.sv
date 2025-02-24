@@ -18,6 +18,7 @@ module rv32i_soc #(
     inout wire [31:0]   io_data
 );
 
+    assign io_data[32:16] = 4'ha;
 
     // Memory bus signals
     logic [31:0] mem_addr_mem;
@@ -27,7 +28,7 @@ module rv32i_soc #(
     logic [31:0] mem_rdata_mem;
     logic        mem_read_mem;
 
-
+    
 
     // ============================================
     //          Processor Core Instantiation
@@ -239,7 +240,7 @@ module rv32i_soc #(
     wire [31:0] en_gpio;
     wire        gpio_irq;
 
-    wire [31:0] i_gpio;
+    logic [31:0] i_gpio;
     wire [31:0] o_gpio;
 
     genvar i;
@@ -260,14 +261,14 @@ module rv32i_soc #(
 	.wb_clk_i(clk), 
     .wb_rst_i(~reset_n), // active-high?
     .wb_cyc_i(wb_gpio_cyc_o), 
-    .wb_adr_i(wb_gpio_adr_o[7:0]), 
+    .wb_adr_i(wb_gpio_adr_o[7:0]), // [9:2]?? 
     .wb_dat_i(wb_gpio_dat_o), 
     .wb_sel_i(wb_gpio_sel_o), 
     .wb_we_i(wb_gpio_we_o), 
     .wb_stb_i(wb_gpio_stb_o),
 	.wb_dat_o(wb_gpio_dat_i), 
     .wb_ack_o(wb_gpio_ack_i), 
-    .wb_err_o(wb_gpio_err_i), 
+//    .wb_err_o(wb_gpio_err_i), // Not used currently
     .wb_inta_o(wb_inta_o),
 
     // 
