@@ -3,5 +3,6 @@ vivado_proj/
 project_1/
 vivado.jou
 vivado.log
-vivado_pid791988.debug
-vivado_pid791988.str
+vivado_pid*.debug
+vivado_pid*.str
+
