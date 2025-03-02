@@ -187,15 +187,27 @@ endmodule : n_bit_reg_wclr
 package riscv_types;
     
     // ALU operation types
-    typedef enum logic [3:0]  { 
-        ADD, SLL, SLT, SLTU, XOR, SRL, OR, AND, 
-        SUB = 4'b1000, SRA = 4'b1101 
+    typedef enum logic [5:0]  { 
+        ADD=5'b00000, SLL, SLT, SLTU, XOR, SRL, OR, AND, 
+        SUB=5'B10000, FLW, FSW, FMADD, FMSUB, SRA, FNMSUB, FNMADD, MUL, MULH, MULHSU, MULHU, DIV,DIVU, REM, REMU,FADD, FSUB, FMUL, FDIV, FSQRT, FSGNJ, FSGNJN, FSGNJX, FMIN, FMAX, FCVTW, FCVTWU, FMVXW, FEQ, FLT, FLE, FCLASS, FCVTSW, FCVTSWU, FMVWX  
     } alu_t;
 
     // Store operation types
     typedef enum logic [1:0] { 
         STORE_BYTE, STORE_HALFWORD, STORE_WORD 
     } store_t;
+
+    // Priority operation types
+    typedef enum logic [2:0] {
+        FDIVU = 3'b000, 
+        FMULU = 3'b001, 
+        FADD_SUBU = 3'b010, 
+        DIVU = 3'b011, 
+        MULU = 3'b100, 
+        FPU = 3'b101, 
+        ALU = 3'b110, 
+        DEFAULT = 3'b111 // ALU
+    } priority_t;
 
     // IF1/IF2 Register Structure
     typedef struct packed {
