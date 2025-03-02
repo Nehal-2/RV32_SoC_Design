@@ -6,3 +6,7 @@ vivado.log
 vivado_pid*.debug
 vivado_pid*.str
 
+bootloader.mem
+fibo.mem
+test.py
+venus.jar
